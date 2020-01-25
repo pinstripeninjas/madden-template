@@ -1,6 +1,13 @@
-///////////////////////////////////////////////////////////
-// List of buttons with image names and locations
-///////////////////////////////////////////////////////////
+//----------------- Location of header logo ----------------------------------//
+
+const headerLogo = "https://picsum.photos/400";
+
+//----------------- Header text ----------------------------------------------//
+
+const headerText = "This is what I'd like to write here.";
+
+//----------------- List of buttons with image names and locations -----------//
+
 const buttons = [
 	// start of button one code
 	{
@@ -51,16 +58,10 @@ const buttons = [
 	// end of button two code
 ];
 
-///////////////////////////////////////////////////////////
-// Top secret code, don't look below here...or else
-///////////////////////////////////////////////////////////
+//-----------------  Top secret code, don't look below here...or else ---------//
 
-const btnListener = document.querySelectorAll(".dropdown-item");
+const logo = document.querySelector("#headerLogo");
+const text = document.querySelector("#headerText");
 
-for (item of btnListener) {
-	item.addEventListener("click", displayImg);
-}
-
-function displayImg() {
-	console.log(this);
-}
+logo.setAttribute("src", headerLogo);
+text.innerText = headerText;
