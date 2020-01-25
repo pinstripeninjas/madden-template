@@ -62,6 +62,35 @@ const buttons = [
 
 const logo = document.querySelector("#headerLogo");
 const text = document.querySelector("#headerText");
+const allButtons = document.querySelector("#allButtons");
 
 logo.setAttribute("src", headerLogo);
 text.innerText = headerText;
+createButtons();
+
+function createButtons() {
+	for (button of buttons) {
+		const div1 = document.createElement("div");
+		div1.classList.add("dropdown", "mx-4");
+		allButtons.append(div1);
+
+		const btn = document.createElement("button");
+		btn.classList.add("btn", "btn-primary", "btn-lg", "dropdown-toggle");
+		btn.id = "dropdownMenuButton";
+		btn.setAttribute("type", "button");
+		btn.setAttribute("data-toggle", "dropdown");
+		btn.innerText = button.buttonTitle;
+		div1.append(btn);
+
+		const divDropdown = document.createElement("div");
+		divDropdown.classList.add("dropdown-menu");
+		div1.append(divDropdown);
+
+		for (image of button.buttonItems) {
+			const imgLink = document.createElement("a");
+			imgLink.classList.add("dropdown-item");
+			imgLink.innerText = image.imgName;
+			divDropdown.append(imgLink);
+		}
+	}
+}
