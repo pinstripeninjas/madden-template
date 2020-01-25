@@ -21,12 +21,12 @@ const buttons = [
 			// image two
 			{
 				imgName: "Image Two",
-				imgLocation: "https://picsum.photos/400"
+				imgLocation: "https://picsum.photos/500"
 			},
 			//image three
 			{
 				imgName: "Image Three",
-				imgLocation: "https://picsum.photos/400"
+				imgLocation: "https://picsum.photos/600"
 			}
 			// end of images
 		]
@@ -45,12 +45,12 @@ const buttons = [
 			// image two
 			{
 				imgName: "Image Two",
-				imgLocation: "https://picsum.photos/400"
+				imgLocation: "https://picsum.photos/500"
 			},
 			//image three
 			{
 				imgName: "Image Three",
-				imgLocation: "https://picsum.photos/400"
+				imgLocation: "https://picsum.photos/600"
 			}
 			// end of images
 		]
@@ -63,10 +63,12 @@ const buttons = [
 const logo = document.querySelector("#headerLogo");
 const text = document.querySelector("#headerText");
 const allButtons = document.querySelector("#allButtons");
+const imgViewer = document.querySelector("#imgViewer");
 
 logo.setAttribute("src", headerLogo);
 text.innerText = headerText;
 createButtons();
+imgToggle();
 
 function createButtons() {
 	for (button of buttons) {
@@ -89,8 +91,28 @@ function createButtons() {
 		for (image of button.buttonItems) {
 			const imgLink = document.createElement("a");
 			imgLink.classList.add("dropdown-item");
+			imgLink.setAttribute("data-href", image.imgLocation);
 			imgLink.innerText = image.imgName;
 			divDropdown.append(imgLink);
 		}
 	}
+}
+
+function imgToggle() {
+	const dropdownItems = document.querySelectorAll(".dropdown-item");
+	for (dropdownItem of dropdownItems) {
+		dropdownItem.addEventListener("click", function() {
+			const imgLink = this.getAttribute("data-href");
+			setNewImg(imgLink);
+		});
+	}
+}
+
+function setNewImg(imgLink) {
+	imgViewer.src = "./img/Spin-1s-200px.gif";
+	const newImg = new Image();
+	newImg.src = imgLink;
+	newImg.onload = function() {
+		imgViewer.src = this.src;
+	};
 }
