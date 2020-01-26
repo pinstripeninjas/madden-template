@@ -1,5 +1,16 @@
 nav {
 	background: #b34599;
+	color: #fff;
+	display: flex;
+	align-items: center;
+}
+
+h4 {
+	font-weight: 300;
+}
+
+.dropdown-item:active {
+	background: #b34599;
 }
 
 #allButtons button,
@@ -25,4 +36,14 @@ nav {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+}
+
+#specialLineFriend {
+	font-size: 40px;
+	font-weight: 300;
+}
+
+#forSpinner h3 {
+	font-weight: 300;
+	color: #04d;
 }

@@ -1,10 +1,10 @@
 //----------------- Location of header logo ----------------------------------//
 
-const headerLogo = "https://picsum.photos/400";
+const clientLogo = "https://picsum.photos/400";
 
-//----------------- Header text ----------------------------------------------//
+//----------------- Project title text ---------------------------------------//
 
-const headerText = "Insert Name of Project Here";
+const titleText = "Insert Name of Project Here";
 
 //----------------- List of buttons with image names and locations -----------//
 
@@ -23,7 +23,7 @@ const buttons = [
 				imgName: "Image Two",
 				imgLocation: "https://picsum.photos/500/300"
 			},
-			//image three
+			// image three
 			{
 				imgName: "Image Three",
 				imgLocation: "https://picsum.photos/700"
@@ -47,7 +47,7 @@ const buttons = [
 				imgName: "Image Two",
 				imgLocation: "https://picsum.photos/500/300"
 			},
-			//image three
+			// image three
 			{
 				imgName: "Image Three",
 				imgLocation: "https://picsum.photos/600/300"
@@ -58,16 +58,18 @@ const buttons = [
 	// end of button two code
 ];
 
-//-----------------  Top secret code, don't look below here...or else ---------//
+//----------------- Top secret code, don't look below here...or else -----------//
 
-const logo = document.querySelector("#headerLogo");
-const text = document.querySelector("#headerText");
+const logo = document.querySelector("#clientLogo");
+const text = document.querySelectorAll(".titleText");
 const allButtons = document.querySelector("#allButtons");
 const imgViewer = document.querySelector("#imgViewer");
 const forSpinner = document.querySelector("#forSpinner");
 
-logo.setAttribute("src", headerLogo);
-text.innerHTML = headerText;
+logo.setAttribute("src", clientLogo);
+for (title of text) {
+	title.innerText = titleText;
+}
 createButtons();
 imgToggle();
 
@@ -104,7 +106,6 @@ function imgToggle() {
 	for (dropdownItem of dropdownItems) {
 		dropdownItem.addEventListener("click", function() {
 			const imgLink = this.getAttribute("data-href");
-			// setNewImg(imgLink);
 			forSpinner.prepend(createSpinner());
 			imgViewer.src = imgLink;
 			imgViewer.onload = function() {
@@ -118,7 +119,7 @@ function createSpinner() {
 	const spinnerH3 = document.createElement("h3");
 	const spinnerSpan = document.createElement("span");
 	spinnerH3.innerText = "Loading ";
-	spinnerH3.classList.add("text-center");
+	spinnerH3.classList.add("text-center", "my-3");
 	spinnerSpan.classList.add("spinner-border");
 	spinnerH3.append(spinnerSpan);
 	return spinnerH3;
