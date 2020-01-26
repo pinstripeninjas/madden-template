@@ -1,6 +1,7 @@
-//----------------- Location of header logo ----------------------------------//
+//----------------- Location of client logo ----------------------------------//
+//----------------- Replace ... with name of file including extension --------//
 
-const clientLogo = "https://picsum.photos/400";
+const clientLogo = "./img/...";
 
 //----------------- Project title text ---------------------------------------//
 
@@ -16,17 +17,17 @@ const buttons = [
 			// image one
 			{
 				imgName: "Image One",
-				imgLocation: "https://picsum.photos/400"
+				imgLocation: "./img/..."
 			},
 			// image two
 			{
 				imgName: "Image Two",
-				imgLocation: "https://picsum.photos/500/300"
+				imgLocation: "./img/..."
 			},
 			// image three
 			{
 				imgName: "Image Three",
-				imgLocation: "https://picsum.photos/700"
+				imgLocation: "./img/..."
 			}
 			// end of images
 		]
@@ -40,17 +41,17 @@ const buttons = [
 			// image one
 			{
 				imgName: "Image One",
-				imgLocation: "https://picsum.photos/400/800"
+				imgLocation: "./img/..."
 			},
 			// image two
 			{
 				imgName: "Image Two",
-				imgLocation: "https://picsum.photos/500/300"
+				imgLocation: "./img/..."
 			},
 			// image three
 			{
 				imgName: "Image Three",
-				imgLocation: "https://picsum.photos/600/300"
+				imgLocation: "./img/..."
 			}
 			// end of images
 		]
