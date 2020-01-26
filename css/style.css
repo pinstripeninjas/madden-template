@@ -1,0 +1,17 @@
+nav {
+	background: #b34599;
+}
+
+#allButtons button,
+#allButtons button:active {
+	color: #fff;
+	border-color: #b34599;
+	background: #b34599;
+	box-shadow: none;
+}
+
+#allButtons button:hover {
+	color: #fff;
+	background: #833170;
+	border-color: #833170;
+}
